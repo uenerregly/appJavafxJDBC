@@ -11,9 +11,11 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent parent = FXMLLoader.load(getClass().getResource("/gui/View.fxml"));
-			Scene scene = new Scene(parent);
-			primaryStage.setScene(scene);
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
+			Parent parent = loader.load();
+			Scene mainScene = new Scene(parent);
+			primaryStage.setScene(mainScene);
+			primaryStage.setTitle("Sample JavaFx application");
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
